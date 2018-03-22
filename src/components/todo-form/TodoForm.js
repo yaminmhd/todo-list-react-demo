@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './TodoForm.css';
 
-class TodoForm extends Component{
-  render(){
-    return(
-      <form onSubmit={this.props.handleSubmit}>
-        <input placeholder="Enter a task" type="text" onChange={this.props.handleInputChange} value={this.props.newTodos.description}/>
-        <input type="submit" value="Submit"/>
-      </form>
-    )
-  }
+const TodoForm = (props) => {
+  return(
+    <form onSubmit={props.handleSubmit}>
+      <input placeholder="Enter a task" type="text" onChange={props.handleInputChange} value={props.newTodos.description}/>
+      <input type="submit" value="Submit"/>
+    </form>
+  )
 }
 
 export default TodoForm

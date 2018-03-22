@@ -10,7 +10,8 @@ describe('TodoTitle', ()=> {
   it('should render TodoTitle properly', () => {
 
     const wrapper = shallow(<TodoTitle/>);
-
+    
     expect(wrapper.find('#todo-title')).toHaveLength(1);
+    expect(wrapper.find('h1')).toHaveLength(1);
   });
 })

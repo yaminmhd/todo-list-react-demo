@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '9'
+cache:
+  directories:
+  - node_modules
+script:
+- yarn test
+- yarn build
+deploy:
+  provider: heroku
+  app: warm-stream-31920
+  on:
+    repo: yaminmhd/todo-list-react-demo
+  api_key:
+    secure: VeNjkkKaQRUnDx9CAPduJlwBAOtvLXGU6Yg73EBrrYPdcYo90cbsZvO7nYUtNHT1FM/1VB1GdwnA5t2Mkge2Fw67I7SiH/IZuYjiTeRN0jfjWEqQRn4ynS9u0cXRBWwctxXk9j1bvXqG6dWxTPxWqq6Ck3n4OCTZk94Wffl88Uu6u+HJlt8ftRVVTjJIP1TiWukERiM/Aw7Iu79/sd1anfgDOSQSXneZ7nylonZP56f74l/eyQoJTlMjzrlNwMfw2Exww2bvRNvH4hO3IBBgUXw6XJfU/lomDFYv5jIudIMbGr/pv+xdD0bcuEbQFHwm/zB/bFXf6M9OvQbVB4ky1UtJTxoa+qou3IAM9CponXrqK7DwfqBzIoi28Lok2fraQ4zevGvslybNQsv4Wgg5Ld9pLdxvlGrye8DiJQHv3hyHuOdC4AhMkXoWLtMmzRshGBaCJ0JfpJJvTanpzaLnghtDg237Hb2WQ+NE1JFXkmD39J4+JeQcTSKcHE/rIEZESPm83TqysBue3f9DuHIggDxqI+h3diOkh+upn2RNPoiO6T2MBEVewwzBJQYyscFPMCBllGZpRaASIlxeifKrP+/xEqjTAkoDVsZ9gDmpnInhcjAnT0IbubgZ9ne2UfILSROSUICzekpuC4lnHhIjVhcVAzEuIyuoNceEpkwY2FI=

@@ -1,3 +1,4 @@
+https://www.travis-ci.org/yaminmhd/todo-list-react-demo.svg?branch=master
 # React Todo List Lab
 
 

@@ -6,8 +6,6 @@ class App extends Component {
   render() {
     return (<div>
       <TodoList title="home"/>
-      <TodoList title="work"/>
-      <TodoList title="jumpstart"/>
       </div>
     )
   }

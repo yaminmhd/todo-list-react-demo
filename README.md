@@ -1,8 +1,6 @@
-https://www.travis-ci.org/yaminmhd/todo-list-react-demo.svg?branch=master
+#Travis Build Status Markup
+[![Build Status](https://www.travis-ci.org/yaminmhd/todo-list-react-demo.svg?branch=master)](https://www.travis-ci.org/yaminmhd/todo-list-react-demo)
 # React Todo List Lab
-
-
-#ADDED CHANGE TO SEE IN TRAVIS
 ### Getting Started
 - Fork and clone repo
 - `cd react-todo-list-lab`

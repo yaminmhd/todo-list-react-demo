@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import TodoList from '../todo-list/TodoList';
 import TodoTitle from '../todo-title/TodoTitle';
 import TodoForm from '../todo-form/TodoForm';
@@ -18,4 +18,31 @@ describe('TodoList', ()=> {
     expect(wrapper.find(TodoForm)).toHaveLength(1);
 
   });
+
+  it('should save state on form submit', () => {
+    //const testTodo = {description: 'trial run', isCompleted: false};
+    const wrapper = shallow(<TodoList />)
+    const expectedLength = wrapper.state().todos.length + 1;
+    const event = {preventDefault(){}}
+
+    //console.log(wrapper.find(TodoForm).props().handleSubmit)
+    wrapper
+      .find(TodoForm)
+      .props()
+      .handleSubmit(event)
+
+    expect(wrapper.state().todos).toHaveLength(expectedLength);
+  });
+
+  it('should update state on every input change', () => {
+    const wrapper = shallow(<TodoList />)
+    const event = {target:{value: 'a'}};
+    wrapper
+       .find(TodoForm)
+       .props()
+       .handleInputChange(event)
+    //console.log(wrapper.state())
+    expect(wrapper.state().newTodos.description).toEqual('a');
+  });
+
 })

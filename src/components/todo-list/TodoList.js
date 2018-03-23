@@ -42,7 +42,7 @@ class TodoList extends Component {
     event.preventDefault();
     const finalTodos = this.state.todos.concat(this.state.newTodos);
     //const finalTodos = [...this.state.todos, ...this.state.newTodos];
-    console.log(this.state.newTodos);
+    //console.log(this.state.newTodos);
     this.setState({
       todos: finalTodos,
       newTodos: {description:'', isCompleted:false}
@@ -57,7 +57,6 @@ class TodoList extends Component {
           todo={todo}
           markedAsDone={this.toggleComplete.bind(this,index)}
         />
-
       )
     })
 

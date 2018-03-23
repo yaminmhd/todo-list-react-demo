@@ -45,4 +45,16 @@ describe('TodoList', ()=> {
     expect(wrapper.state().newTodos.description).toEqual('a');
   });
 
+  it('should toggle isCompleted value on click', () => {
+    const index = 0;
+    const wrapper = shallow(<TodoList/>)
+    wrapper
+      .find(TodoItem)
+      .first()
+      .props()
+      .markedAsDone(index);
+    //console.log(wrapper.state().todos[0])
+    expect(wrapper.state().todos[0].isCompleted).toEqual(false);
+  });
+
 })

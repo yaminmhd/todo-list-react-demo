@@ -9,7 +9,7 @@ import TodoItem from '../todo-item/TodoItem';
 describe('TodoForm', ()=> {
   it('should render TodoForm properly', () => {
     const testTodo = {description: 'buy lunch', isCompleted: false};
-    const wrapper = shallow(<TodoForm newTodos={testTodo}/>);
+    const wrapper = shallow(<TodoForm handleInputChange={()=>{}} handleSubmit={()=> {}} newTodos={testTodo}/>);
     expect(wrapper.find('input')).toHaveLength(2);
   });
 
@@ -17,12 +17,12 @@ describe('TodoForm', ()=> {
     const testTodo = {description: 'trial run', isCompleted: false};
     const mockHandler = jest.fn();
 
-    const wrapper = shallow(<TodoForm newTodos={testTodo} handleSubmit={mockHandler} />);
+    const wrapper = shallow(<TodoForm handleInputChange={()=>{}} newTodos={testTodo} handleSubmit={mockHandler} />);
 
     wrapper.find("form").simulate("submit", { preventDefault() {} });
 
     expect(mockHandler).toBeCalled();
   });
 
-  
+
 })

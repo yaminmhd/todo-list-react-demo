@@ -21,7 +21,7 @@ describe('TodoList', ()=> {
 
   it('should save state on form submit', () => {
     //const testTodo = {description: 'trial run', isCompleted: false};
-    const wrapper = shallow(<TodoList />)
+    const wrapper = shallow(<TodoList/>)
     const expectedLength = wrapper.state().todos.length + 1;
     const event = {preventDefault(){}}
 
@@ -35,7 +35,7 @@ describe('TodoList', ()=> {
   });
 
   it('should update state on every input change', () => {
-    const wrapper = shallow(<TodoList />)
+    const wrapper = shallow(<TodoList/>)
     const event = {target:{value: 'a'}};
     wrapper
        .find(TodoForm)
@@ -59,14 +59,14 @@ describe('TodoList', ()=> {
 
 
   it('should toggle isCompleted to false when click', () => {
-    const index = 0;
+
     const wrapper = shallow(<TodoList/>)
+    wrapper.state().todos[4].isCompleted = true;
     wrapper
       .find(TodoItem)
-      .first()
+      .last()
       .props()
-      .markedAsDone(index)
-    //console.log(wrapper.state().todos[0])
-    expect(wrapper.state().todos[0].isCompleted).toEqual(false);
+      .markedAsDone()
+    expect(wrapper.state().todos[4].isCompleted).toEqual(false);
   });
 })

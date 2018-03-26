@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import './TodoForm.css';
 
 class TodoForm extends Component{
@@ -10,6 +11,12 @@ class TodoForm extends Component{
       </form>
     )
   }
+}
+
+TodoForm.propTypes = {
+  newTodos: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired
 }
 
 export default TodoForm
